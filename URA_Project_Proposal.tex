@@ -131,101 +131,133 @@
 \maketitle
 \thispagestyle{fancy}
 
-\textbf{Neutrino Energy Reconstruction}
+\noindent{\textbf{Neutrino Energy Reconstruction}}
 
 Neutrino energy reconstruction is one of the largest sources of uncertainty in modern neutrino
-oscillation experiments. The neutrino oscillation probability is a function of the neutrino’s energy, and uncertainty in determining this energy limits the precision of measuring theoretical oscillation parameters. Thus, accurate energy reconstruction is fundamental to the success of the upcoming Deep Underground Neutrino Experiment (DUNE).  In DUNE, this energy is estimated through identifying the final state particles produced by neutrino-nucleus interactions, and it can be wrongly estimated when these particles undergo interactions in the detector medium. These interactions are known as Secondary Interactions (SI).
+oscillation experiments. The neutrino oscillation probability is a function of the neutrino\textquotesingle s energy, and uncertainty in determining this energy limits the precision of measuring theoretical oscillation parameters. Thus, accurate energy reconstruction is fundamental to the success of the upcoming Deep Underground Neutrino Experiment (DUNE).  In DUNE, this energy is estimated through identifying the final state particles produced by neutrino-nucleus interactions, and it can be wrongly estimated when these particles undergo interactions in the detector medium. These interactions are known as Secondary Interactions (SI).
   
-	Errors arise in energy reconstruction in various ways. One way is by creating failures in reconstruction software to correctly identify particle species.  Misidentification is enhanced when these particles undergo SI. \hl{For example, an interacting charged pion could be wrongly identified as a proton. In this case, the pion’s mass energy will not be accounted for in the neutrino energy calculation.} Similarly, a significantly short pion track could be missed by the reconstruction altogether. 
+	Errors arise in energy reconstruction in various ways. One possible way is when a significantly short (because an interacton occurred) pion track is missed by reconstruction software. Another way is when a pion is a absorbed by a nucleus, and that nucleus emits neutrons. Neutrons are difficult to detect in DUNE, and as such, essentiall hide energy. 
 	
-	These mis-reconstruction effects can be corrected for through understanding the rate of these interactions – represented by a quantity known as the cross section. Thus, accurate knowledge on the pion-Argon cross section is crucial to the success of DUNE. Lack of this knowledge can lead to modeling deficiencies which will bias DUNE’s measurements. A recent study (Ankowski) has found that an inaccuracy of 20\% on the correcting procedure can significantly bias a measurement of  δCP – a key measurement of DUNE. A measurement of the pion-Argon cross section would be the first of its kind across a broad energy range. This measurement would serve to improve the modeling of SI in DUNE’s detector simulations. This, in turn, would allow for higher accuracy in neutrino energy reconstruction, and mitigation of bias in DUNE’s measurements.
+	These and other similar mis-reconstruction effects can be corrected for through understanding the rate of these interactions -- represented by a quantity known as the cross section. Thus, accurate knowledge on the pion-Argon cross section is crucial to the success of DUNE. Lack of this knowledge can lead to modeling deficiencies which will bias DUNE’s measurements. A recent study\cite{AnkowskiEtAl} has found that an inaccuracy of 20\% on the correcting procedure can significantly bias a measurement of  $\delta$CP -- a key measurement of DUNE. Currently, no measurement of the pion-Argon cross section exists in DUNE\textquotesingle s energy range. This measurement would serve to improve the modeling of SI in DUNE’s detector simulations, and in turn, would mitiage bias in DUNE\textquotesingle s measurements due to energy reconstruction.
 \\
 
-\textbf{ProtoDUNE}
+\noindent{\textbf{ProtoDUNE}}
 
-	A prototype of the DUNE far detector known as ProtoDUNE (cite TDR) was built in CERN, and recently completed its first run of taking beam data. This prototype serves to test the efficacy of the various detector systems, as well as installation and integration of these individual systems, and to provide physics measurements of particles from both beam and cosmogenic sources. This detector is a 400T liquid argon Time Projection Chamber (TPC). Charged particles ionize the argon as they travel through the detector, leaving tracks in their wake. The argon is immersed in a static electric field, which pulls the ionized electrons toward planes of wires. As the electrons drift, they induce signals on 2 planes of “induction” wires. Another signal is produced on a third plane of “collection” wires. These provide 2D reconstruction and calorimetry of the particle tracks. The drift time and the known drift speed of the tracks provides a third dimension of reconstruction. \hl{(Show a track from protodune)}
+	A prototype of the DUNE far detector known as ProtoDUNE\cite{PDUNETDR} was built in CERN, and recently completed its first run of taking beam data. This prototype serves to test the efficacy of the various detector systems, as well as installation and integration of these individual systems, and to provide physics measurements of particles from both beam and cosmogenic sources. This detector is a 400T liquid argon Time Projection Chamber (TPC). Charged particles ionize the argon as they travel through the detector, leaving tracks in their wake. The argon is immersed in a static electric field, which pulls the ionized electrons toward planes of wires. As the electrons drift, they induce signals on 2 planes of “induction” wires. Another signal is produced when the electrons land on a third plane of “collection” wires. These planes provide 2D reconstruction and calorimetry of the particle tracks. The drift time and the known drift speed of the tracks provides a third dimension of reconstruction. An example of this tracking can be seen in Figure \ref{fig:track}. \hl{(How do I cite the following image?)}
 	
-	 ProtoDUNE successfully completed its data taking of beam data before the LHC long shutdown. Appreciable statistics were achieved over a broad range of beam momenta (0.3 – 7 GeV/c  nominal beam momentum). This provides a great opportunity to perform physics measurements such as a pion cross section measurement and to test the ability to reconstruct these particles. Analysis efforts are underway, with a current focus on calibrating the detector and reconstruction. 
+\begin{figure}[htpb]
+        \centering
+        \begin{subfigure}[t!]{.75\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{{/home/jake/Downloads/ProtoDUNE-first-tracks-image}.jpg}
+        \end{subfigure}
+
+\caption{One of the first cosmic muon tracks seen in ProtoDUNE. }\label{fig:track}
+\end{figure}
+	
+	 ProtoDUNE successfully completed its run of beam-data taking (August 29 -- November 11, 2018) before the LHC long shutdown. Roughly 3E5 pion-like triggers were registered for each nominal beam monentum setting (1, 2, 3, 6, 7 GeV/c), with an extra 1500 triggers at .5 GeV/c. This provides a great opportunity to perform physics measurements such as a pion cross section measurement and to test the ability to reconstruct these particles. Analysis efforts are underway, with a current focus on calibrating the detector and reconstruction. 
 \\
 
-\textbf{Pion-Argon interactions}
+\noindent{\textbf{Pion-Argon interactions}}
 
 
-	Pions can undergo both elastic interactions (wherein no energy is transferred) and inelastic interactions with Argon nuclei. Pion-nucleus scattering experiments generally categorize the inelastic interactions by the particle content of the resulting final state. These are defined in the following table:
-
-\begin{table}[!htb]
+	Pions can undergo both elastic interactions (wherein no energy is transferred) and inelastic interactions with Argon nuclei. Pion-nucleus scattering experiments generally categorize the inelastic interactions by the particle content of the resulting final state. These are defined in Table \ref{tab:interactions}:
+\hl{Do the different column justifications look good?}
+\begin{table}[htb!]
 \begin{center}
-  \begin{tabular}{| c | c |}
+  \begin{tabular}{| c | l |}
   \hline
-  Quasi-Elastic & One same-charge pion\\  
+  Quasi-Elastic & $\pi^{\pm} + N \rightarrow \pi^{\pm} + N'$ \\  
   \hline	
-  Absorption & No pion \\
+  Absorption & $\pi^{\pm} + N \rightarrow N'$ \\
   \hline  
-  Charge Exchange & One neutral pion \\
+  Charge Exchange & $\pi^{\pm} + N \rightarrow \pi^{0} + N'$ \\
   \hline
-  Double Charge Exchange & One opposite-charge pion \\
+  Double Charge Exchange & $\pi^{\pm} + N \rightarrow \pi^{\mp} + N'$\\
   \hline
-  Pion Production & More than one pion \\
+  Pion Production & $\pi^{\pm} + N \rightarrow  n\pi + N'$ \\
   \hline
   \end{tabular}
-\end{center}
+\end{center}\caption{Exclusive pion-nucleus interactions. Note: N represents the nucleus before the interaction and N\textquotesingle \space represents the nucleus and any neutrons/protons after the interaction. $n\pi$ represents more than one pion of any flavor.}\label{tab:interactions}
 \end{table}
  
 	
-	The different channels provide unique problems to reconstruction issues. For example, Charge Exchange emits a neutral pion which then decays to photons. These photons create showers in the detector that can be mistaken for electrons – a signature of a specific type of neutrino interaction \hl{(might need to discuss electron and muon neutrinos above in order to show why this is a problem)}. As alluded above, Absorption might cause the reconstruction to miss the pion altogether. Measuring the individual (exclusive) cross sections of these processes, as well as their combined total cross section, will be a focus of ProtoDUNE analyses and will lead to improvements of SI modeling. 
+	The different channels provide unique problems to energy reconstruction. For example, Charge Exchange emits a neutral pion which then decays to photons. These photons create showers in the detector that can be mistaken for electrons. As mentioned above, Absorption might cause the reconstruction to miss the pion altogether, or might cause energy to go into neutrons (which are difficult to detect). Measuring the individual (exclusive) cross sections of these processes, as well as their combined total cross section, will be a focus of ProtoDUNE analyses and will lead to improvements of SI modeling. 
 \\
 
-\textbf{Prior Work – ProtoDUNE Cold Electronics}
+\noindent{\textbf{Prior Work -- ProtoDUNE Cold Electronics}}
 
 	Beginning in Summer 2016, I began work on testing the Cold Electronics (CE) for ProtoDUNE. These electronics shape, pre-amplify, and then digitize the signals produced by the particle tracks in the detector. They sit within the liquid argon in order to reduce the noise associated with the signals by limiting the extent of the analog portion of the readout circuits. Over the following year, I gained experience testing small batches of the CE chips before heading to Brookhaven National Laboratory to test production-level chips. Soon after that, I traveled to CERN to help final tests and installation of the Cold Electronics. The CE required final checkouts before and after being placed on the readout wires of the detector in order to verify both good operation and acceptable levels of noise on the chips and wires. After the electronics were installed, power supplies were deployed to various subsystems of the detector. These power supplies have the ability to create noise in the CE through mistakes in grounding and shielding as well as internal characteristics of the power supplies. I helped identify these sources of noise by analyzing the CE signals as various configurations of the power supplies were tested.
 	
 	The digitized CE signals are handled by an electronics boards known as Warm Interface Boards (WIBs). The WIBs also provide control and configuration of the CE boards. Prior to integration within ProtoDUNE, direct control of the WIBs was provided to users through software operating over a local network. During my stay at CERN, I assisted in developing the software interface between the CE and the ProtoDUNE Data Acquisition System (DAQ). Some first tasks included implementing the functionality of configuring the CE boards via the WIBs by the user-control software, and other similar low-level controls. Then this software was integrated into the artDAQ framework which allowed the WIBs and CE to be readout by the DAQ and controlled by the broader detector control system.
 \\
 
-\textbf{Prior Work – ProtoDUNE Beamline Instrumentation Integration}
+\noindent{\textbf{Prior Work -- ProtoDUNE Beamline Instrumentation Integration}}
 
 	Beginning Summer 2018, I started working on integrating the data collected by ProtoDUNE’s Beamline Instrumentation (BI) into the ProtoDUNE analysis framework. The ProtoDUNE BI consists of a set of eight fiber monitors, three scintillating planes, and two Cerenkov detectors. The fiber monitors serve to profile the particles in the beamline. Additionally, three of these monitors provide the momentum spectrometry by measuring the bending angle of the beam after it passes through a magnet. The scintillating planes have the dual roles of creating a trigger to register a particle has reached the detector and measuring the time of flight (TOF) of that particle throughout the beamline. The distribution of momentum and TOF provides Particle Identification (PID) of the beamline particles. A figure of this distribution from data taken over ProtoDUNE’s run is shown below. The Cerenkov detectors – which have different momentum thresholds based on the particle’s mass  – provide a way to distinguish the particles when TOF separation is no longer possible at higher momenta.
 
-\hl{PUT MOMENTUM VS TOF PLOT HERE}
+\begin{figure}[htpb]
+        \centering
+        \begin{subfigure}[t!]{.75\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{{/home/jake/beam_data/Calibrated_tof_mom_labels}.pdf}
+        \end{subfigure}
+
+\caption{Time of Flight and Momentum information extracted from the ProtoDUNE Beamline. Red curves are the predicted distribution for electrons (e), muons ($\mu$), pions ($\pi$), protons (p), and deuterons (d). }\label{fig:tof_mom}
+\end{figure}
 
 	Information from these devices was handled by a DAQ system separate to that of ProtoDUNE, and then stored in a database. I wrote software in the ProtoDUNE analysis framework to handle fetching the data from the database. This software queries the database for each beam event and matches the timestamp (created by the ProtoDUNE timing system) of the event to timestamps from the various BI devices. It then calculates the TOF, momentum, and saves the Cerenkov detector information. It also creates track objects from the last 4 fiber monitors in the beamline and projects this to the face of the detector. The information created by the software allows analyzers to select for specific particle species using the TOF, momentum, and Cerenkov information, as well as testing reconstruction of the particles in the detector using the projected beamline tracks. 
 \\
 
-\textbf{Prior Work – GeantReweight}
+\noindent{\textbf{Prior Work -- GeantReweight}}
 
-	I began work in Summer 2018 on creating a software package called GeantReweight to handle reweighting of pion interactions in the simulation software Geant4. Many experiments, including DUNE, use Geant4 to simulate particles as they traverse through detectors. As described above, it is important to DUNE’s success to improve the modeling of the secondary interactions of pions created by neutrino-nucleus interactions. It is similarly important to understand the uncertainty associated to that modeling within Geant4. These model improvements and the uncertainty estimation can be achieved by changing the underlying model assumption to a simulation to produce accordingly-varied simulation results, and then comparing these to data. However, Geant4 provides no user-friendly way (short of digging into the source code) to produce these varied predictions. 
+	I began work in Summer 2018 on creating a software package called GeantReweight which provides a reliable weighting system of pion interactions in the simulation software Geant4\cite{Geant4}. Many experiments, including DUNE, use Geant4 to simulate particles as they traverse through detectors. %As described above, it is important to DUNE’s success to improve the modeling of the secondary interactions of pions created by neutrino-nucleus interactions. It is similarly important to understand the uncertainty associated to that modeling within Geant4. These model improvements and the uncertainty estimation can be achieved by changing the underlying model assumption to a simulation to produce accordingly-varied simulation results, and then comparing these to data. However, Geant4 provides no user-friendly way (short of digging into the source code) to produce these varied predictions. 
+GeantReweight provides a way to test alternate models in Geant4, tune models to external data, and propate uncertainties on these models to DUNE\textquotesingle s oscillation analyses. Similar work has been completed by the T2K collaboration to tune a similar model in their neutrino interaction simulation\cite{NEUT_tune}. 
 	
-	GeantReweight provides this functionality through reweighting the results of the nominal Geant4 simuation. Reweighting can be thought of as finding the relative probability for the results of a simulation to occur under an alternate underlying model. For each event in a simulation, a weight is produced based on this relative probability and is used when binning observables of the simulation results.
-	 
-	\hl{GeantReweight serves to reweight pion interactions by changing the pion-nuclues cross section. The weights are calculated based on the set of steps a pion takes, whether it interacted, through which channel (described above) it interacted, and the nominal and varied cross sections. 
-	
-	In addition to providing the ability to produce varied Geant4 results, GeantReweight has the benefit of reducing the computing resources used to create these results. The analysis performed to create the weights is much less computationally expensive than regenerating the simulation for each set of varied cross sections.} 
+	GeantReweight provides this functionality through reweighting the results of the nominal Geant4 simuation. For each event in a simulation, a weight is produced based on this relative probability and is used when binning observables of the simulation results. This provides an approximation of the results of the simulation with an alternate underlying model assumption. 	 
 	
 	Sets of reweighted Geant4 can be fit to pion scattering data in order to tune the pion cross section model and to produce associated error bands. This tune and error bands can then be used in DUNE’s neutrino analyses to mitigate the errors associated with this modeling. As new data – such as from ProtoDUNE – is released, updated fits can be performed.
 	
 	Work is ongoing to test and validate GeantReweight’s functionality, and to perform first-pass fits to historical pion scattering data. 
 \\
 
-\textbf{Project Overview}
+\noindent{\textbf{Project Overview}}
 
 	With support from the URA Visiting Scholars Program, I propose to perform a measurement of the pion-Argon cross section in the combined exclusive channels of Absorption (Abs) and Charge Exchange (CEx) using the recent ProtoDUNE data. This section serves to describe the steps of this measurement.
 	
 	A major first step consists of investigating failures in reconstruction, highlighting these failures to the reconstruction experts, and developing tools for analyzers such as myself to use in mitigating or fixing these errors.
 	
-	A key step in the measurement is defining a selection. In both the Abs and CEx channels, the pion strikes a nucleus, which then either absorbs the pion, or emits a neutral pion instead. Thus, the signal for the combined Abs+CEx channel is defined, to first order, by a “disappearing” pion (i.e. one whose track ends in flight rather than appearing to stop). The benefit to studying this channel is the avoidance of identifying the outgoing neutral pion. In addition to the signal, the background to Abs+CEx will need to be defined. It will broadly consist of muon tracks that pass the beamline selection (perhaps by inefficiencies in the Cerenkov detectors) or that are produced from decays in the beamline, pions which are captured at low momentum, and low-angle (close to horizontal) cosmic tracks. Studies on the selection performance will be completed via Monte Carlo studies.
+	A key step in the measurement is defining a selection. In both the Abs and CEx channels, the pion strikes a nucleus, which then either absorbs the pion, or emits a neutral pion instead. Thus, the signal for the combined Abs+CEx channel is defined, to first order, by a “disappearing” pion (i.e. one whose track ends in flight rather than appearing to stop). The benefit to studying this channel is the avoidance of identifying the outgoing neutral pion. In addition to the signal, the background to Abs+CEx will need to be defined. Broadly, it will consist of the following: muon tracks that pass the beamline selection for pions; muons that are produced from decays in the beamline; pions which are captured at rest; and low-angle (close to horizontal) cosmic tracks. Studies on the selection performance will be completed via Monte Carlo studies.
 	
-	After defining the selection, a major step will be to perform an automated scan of data and a calculation of the cross section using ProtoDUNE’s analysis framework. This analysis framework is known as LArSoft, with which I have gained experience through developing the beam instrumentation interface and performing various studies for ProtoDUNE. The calculation of the cross section will use the “thin-slice method” developed for similar measurements in the LArIAT experiment \hl{(cite LArIAT)}. This consists of separating the detector into multiple thin targets defined by the separation of the readout wires. A new thin-target experiment, categorized by the pion’s energy, will be considered each time the pion crosses into a new slice. If the pion enters the next slice, it is considered surviving. Likewise, if it interacts in the slice, it will be considered in the fraction of interacting pions that is used to calculate the cross section.
+	After defining the selection, a major step will be to perform an automated scan of data and a calculation of the cross section using ProtoDUNE’s analysis framework. This analysis framework is known as LArSoft, with which I have gained experience through developing the beam instrumentation interface and performing various studies for ProtoDUNE. The calculation of the cross section will use the “thin-slice method” developed for similar measurements in the LArIAT experiment\cite{LArIAT}. This consists of separating the detector into multiple thin targets defined by the separation of the readout wires. These thin slices are used to categorize the pions as having survived or interacted in order to extract the cross section. 
 	
-	Another portion of the project will be quantifying the systematic uncertainty on the measurement. This uncertainty can arise from a broad range of sources. Such sources are related to the beamline, the Cold Electronics, modeling deficiencies, as well as to detector misalignments created during construction or during cooldown of the detector as it was filled with argon. My experience working with both the beamline and CE will provide me with intuition in quantifying the associated systematics as well as established contact with the respective experts to gain their input. Similarly, my work on GeantReweight will provide me with insight into the specifics of Geant4’s simulation of particles within ProtoDUNE, allowing me to tackle the modeling systematics. 
+	Another portion of the project will be quantifying the systematic uncertainty on the measurement. This uncertainty can arise from a broad range of sources. Such sources are related to the beamline, the Cold Electronics, modeling deficiencies, as well as to detector misalignments created during construction or during cooldown of the detector as it was filled with argon. My experience working with both the beamline and CE will provide me with intuition in quantifying the associated systematics as well as established contact with the respective experts to gain their input. Similarly, my work on GeantReweight will provide me with insight into the specifics of Geant4\textquotesingle s simulation of particles within ProtoDUNE, allowing me to tackle the modeling systematics. 
 \\
 
-\textbf{Summary}
+\noindent{\textbf{Summary}}
 
-	Fermilab is a hub for many scientists working on ProtoDUNE. The ability to work at Fermilab would put me in direct contact with coordinators of  ProtoDUNE analysis efforts, LArSoft experts, as well as other analyzers. This would facilitate a sharing of experience that would supplement both my own measurement and others analyses. Furthermore, DUNE collaboration meetings occur twice a year at Fermilab, and serve as a way to share progress between members who are not normally present at Fermilab. The stay at Fermilab has the added benefit of helping me more easily attend these meetings. 
+	Fermilab is a hub for many scientists working on ProtoDUNE. The ability to work at Fermilab would put me in direct contact with coordinators of  ProtoDUNE analysis efforts, LArSoft experts, as well as other analyzers. This would allow me to more quickly complete my own analysis and to collaborate on other ProtoDUNE analyses. Furthermore, DUNE collaboration meetings occur twice a year at Fermilab, and serve as a way to share progress between members who are not normally present at Fermilab. The stay at Fermilab has the added benefit of helping me more easily attend these meetings. 
 
+\begin{thebibliography}{4}
+\bibitem{AnkowskiEtAl}
+A. Ankowski, et. al. Missing energy and the measurement of the CP-violating phase in neutrino oscillations. \textit{Physical Review D,} 92:091301, 2015.
+
+\bibitem{PDUNETDR}
+[The DUNE Collaboration], The Single-Phase ProtoDUNE Technical Design Report. arXiv:1706.07081v2, 2017.
+
+\bibitem{Geant4}
+S. Agostinelli et al., Nucl. Instrum. Meth. A 506 (2003) 250-303
+
+\bibitem{NEUT_tune}
+E. S. Pinzon Guerra, et al., Using world $\pi^{\pm}$--nucleus scattering data to constrain an intranuclear cascade model. arXiv:1812.06912, 2018.
+
+\bibitem{LArIAT}
+[The LArIAT Collaboration], LArIAT: Liquid Argon In A Testbeam. arXiv:1406.5560, 2014.
+\end{thebibliography}
 \newpage
-\textbf{Budget}\\
-Project Period: July 1, 2019 - June 30, 2020
+\noindent{\textbf{Budget}}
+
+	Project Period: July 1, 2019 - June 30, 2020
 \newline
 I am requesting a budget of \textbf{\$xxx} for a period of twelve months of support at Fermilab. The breakdown is:
 
